@@ -315,15 +315,15 @@ const SENSORES = {
 
   velocidade: {                       // cena 0 - encoder no eixo-arvore (x~7030, y~2305 de 8000x4000) - ajustar se o encoder ficar em outro ponto
     lon: 316.4, lat: -13.7,
-    label: "Encoder rotativo",
-    titulo: "Encoder Rotativo",
-    sub: "Na extremidade do eixo-&aacute;rvore, acoplado por engrenagem",
+    label: "Sensor de velocidade",
+    titulo: "Sensor de Velocidade",
+    sub: "Na parte superior do torno, junto &agrave;s engrenagens",
     thumb: THUMB_ENCODER,
     texto: [
-      'Um <em class="hl">encoder rotativo incremental</em> gira junto com o eixo-&aacute;rvore, acoplado por uma <em class="hl">engrenagem fabricada pela equipe</em> e preso a uma <em class="hl">chapa de fixa&ccedil;&atilde;o</em> no torno. A cada fra&ccedil;&atilde;o de volta ele gera pulsos em <em class="hl">dois canais defasados (A/B, ou CLK/DT)</em>.',
-      'O ESP32 conta esses pulsos para calcular a <em class="hl">rota&ccedil;&atilde;o (RPM)</em>. A <em class="hl">ordem entre os canais</em> mostra o <em class="hl">sentido de giro</em>, e o total acumulado de pulsos permite medir o <em class="hl">tempo efetivo de opera&ccedil;&atilde;o</em> da m&aacute;quina.'
+      'Um <em class="hl">sensor indutivo de proximidade</em> fica posicionado na parte de cima do torno, apontado para as <em class="hl">engrenagens</em>. Ele detecta metal sem contato: cada vez que um dente da engrenagem passa em frente &agrave; sua face, o sensor gera um <em class="hl">pulso digital</em> na sa&iacute;da <em class="hl">D0</em>.',
+      'O ESP32 conta esses pulsos por <em class="hl">interrup&ccedil;&atilde;o</em> e, sabendo quantos dentes passam por volta, calcula a <em class="hl">rota&ccedil;&atilde;o (RPM)</em> em tempo real. Como n&atilde;o h&aacute; contato f&iacute;sico, o sensor <em class="hl">n&atilde;o sofre desgaste</em> e resiste bem a &oacute;leo e cavacos. O total acumulado de pulsos tamb&eacute;m permite medir o <em class="hl">tempo efetivo de opera&ccedil;&atilde;o</em> da m&aacute;quina.'
     ],
-    pills: ["Leitura de RPM", "Quadratura A/B", "Sentido de giro", "GPIO 25 / 26"]
+    pills: ["Leitura de RPM", "Sensor indutivo", "Sem contato", "GPIO 23"]
   },
 
   ultrassonico: {                     // cena 0 - logo abaixo (x~6830, y~2425 de 8000x4000)
